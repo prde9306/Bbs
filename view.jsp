@@ -93,11 +93,11 @@
      <tbody>
         <tr>
           <td style="width: 20%;">글 제목</td>
-          <td colspan="2"><%=bbs.getBbsTitle() %></td>
+          <td colspan="2"><%=bbs.getBbsTitle().replaceAll(" ", "&nbsp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll("\n", "<br>") %></td>
         </tr>
         <tr>
           <td>작성자</td>
-          <td colspan="2"><%=bbs.getBbsTitle() %></td>
+          <td colspan="2"><%=bbs.getUserID() %></td>
         </tr>
         <tr>
           <td>작성일자</td>
@@ -105,7 +105,7 @@
         </tr>
         <tr>
           <td>내용</td>
-          <td colspan="2" style="min-height: 200px; text-align: left;"><%=bbs.getBbsContent()%></td>
+          <td colspan="2" style="min-height: 200px; text-align: left;"><%=bbs.getBbsContent().replaceAll(" ", "&nbsp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll("\n", "<br>") %></td>
         </tr>
      </tbody>     
      </table>
@@ -115,7 +115,7 @@
       %>  	 
            <a href= "update.jsp?bbsID=<%= bbsID %>" class="btn btn-primary">수정</a>
            <a href= "deleteAction.jsp?bbsID=<%= bbsID %>" class="btn btn-primary">삭제</a>
-     //여기 왜 수정이랑 삭제버튼 안나오냐 
+   
      <%
      }
      %>

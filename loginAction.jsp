@@ -2,6 +2,7 @@
     pageEncoding="utf-8"%>
     <%@ page import ="user.userDAO" %>
     <%@ page import ="java.io.PrintWriter" %>
+    <%@ page import = "com.jydev.util.Utility" %>>
     <% request.setCharacterEncoding("UTF-8"); %>
     <jsp:useBean id="user" class="user.User" scope="page" />
     <jsp:setProperty name="user" property="userID" />
@@ -29,8 +30,8 @@
 	    	script.println("</script>");	 
   }
     userDAO UserDAO = new userDAO();
-    int result = UserDAO.login(user.getUserID(), user.getUserPassword());
-    if(result==1){
+    int result = UserDAO.login(user.getUserID(), Utility.encoding(user.getUserPassword()));
+    if(result==1){                                      
     	session.setAttribute("userID", user.getUserID());
     	PrintWriter script = response.getWriter();
     	script.println("<script>");

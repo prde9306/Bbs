@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
+<%@page import = "com.jydev.util.Utility"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -48,7 +49,7 @@
               <input type ="text" class="form-control" placeholder="아이디"name="userID" maxlength="20">
               </div> 
             <div class="form-group">    
-              <input type ="password" class="form-control" placeholder="비밀번호"name="userPassword" maxlength="20">
+              <input type ="password" class="form-control" placeholder="비밀번호"name="userPassword" maxlength="200">
             </div>
             <div class="form-group">    
               <input type ="text" class="form-control" placeholder="이름"name="userName" maxlength="20">
